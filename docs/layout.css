@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+ul.share {
+	margin          : 0;
+	padding         : 0;
+	list-style-type : none;
+	font-size       : 14px;
+}
+
+ul.share li {
+	padding : 0;
+	margin : 0;
+	float : left;
+	border-bottom : 0px;
+}
+
+div.share-button .box{
+	padding : 0;
+	margin : 0;
+	display: inline-block;
+	width : 113px;
+	vertical-align: top;
+}
+
+.s-fix{
+	display    : block;
+	min-height : 1px;
+}
+
+iframe.twitter-share-button {
+	/*width: 90px!important;
+	max-width: 105px!important;*/
+}
