@@ -1,0 +1,109 @@
+<html lang="es"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width">
+<link type="text/css" rel="stylesheet" href="css/main.css">
+<link type="text/css" rel="stylesheet" href="css/layout.css">
+<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+<script type="text/javascript" src="layout.js"></script>
+<title>Carga de imágenes de Wii U</title>
+<script type="text/javascript">
+$(function(){
+    if(is_login()){
+        auto_scroll(180);
+    }else{
+        auto_scroll(120);
+    }
+    init_layout();
+});
+
+function alert_twitter(){
+    alert("Ten en cuenta que las\nimágenes que publiques\nen Twitter están sujetas a\nlos términos de uso y la\npolítica de privacidad\nestablecidos por Twitter.");
+}
+
+function alert_facebook(){
+    alert("Ten en cuenta que las\nimágenes que publiques\nen Facebook están sujetas a\nlos términos de uso y la\npolítica de privacidad\nestablecidos por Facebook.");
+}
+
+function alert_tumblr(){
+    alert("Ten en cuenta que las\nimágenes que publiques\nen Tumblr están sujetas a\nlos términos de uso y la\npolítica de privacidad\nestablecidos por Tumblr.");
+}
+
+</script>
+</head>
+<body onload="set_share_buttons();">
+<div class="container">
+  <div class="page-header">
+    <h1><img src="img/logo_US_es.png" width="530" height="80" alt="Carga de imágenes de Wii U"></h1>
+  </div>
+  
+  <div class="body">
+  
+  <div class="contents">
+
+    
+    <div class="site-desc" style="display: none; ">Esta web te permite publicar fácilmente las capturas de pantalla que realices mientras juegas en tu consola Wii&nbsp;U.</div>
+    
+    <div class="area-login">
+
+        <div class="area-btn twitter" style="display: none; " onclick="alert_twitter()"><a href="getRequestTokenTW" class="btn-twitter">Iniciar sesión en Twitter</a></div>
+    <div class="login-account login-twitter" style="">
+    <p class="check-twitter"></p><span class="text-twitter">Twitter: @idkNxcolas</span>
+    <a href="logoutTW" class="btn-logout">Salir</a>
+    </div>
+        
+        <div class="area-btn facebook" style="" onclick="alert_facebook()"><a href="getRequestTokenFB" class="btn-facebook">Iniciar sesión en Facebook</a></div>
+    <div class="login-account login-facebook" style="display: none; ">
+    <p class="check-facebook"></p><span class="text-facebook">Facebook: </span>
+    <a href="logoutFB" class="btn-logout">Salir</a>
+    </div>
+        
+     
+    </div>
+    
+    <div class="area-upload" style="display: block; ">
+        
+    <form enctype="multipart/form-data" action="postImage" method="post" onsubmit="return check_image_selected();">
+      <input type="hidden" name="hidden_key" value="dbc58bec88611cebaa8b9c8ee911cdfe">
+      <div class="upload-file-notice">Selecciona una imagen.</div>
+      <div><input type="file" name="image" class="upload-file">
+      </div>
+      <div class="input-area">Añadir comentario (máximo 80 caracteres): <br><input type="text" maxlength="80" name="message" class="form-text">
+      </div>
+
+      <div class="input-notice">Se añadirá automáticamente una <a href="titlelist">etiqueta</a> de este programa.</div>
+
+      </form></div>
+      
+      <div class="area-submit" style="display: block; ">
+      	<p class="sns-name">¿Quieres publicar una imagen en Twitter?</p>
+      	<button type="submit" class="btn-submit"><p class="icon-post"></p><span>Publicar</span></button>
+      </div>
+    
+  </div>
+  
+  </div>
+  
+  <div class="page-footer">
+  <div class="share-button"><div class="box" id="twitter"><a href="https://twitter.com/share?url=https%3A%2F%2Fi.nintendo.net%2F&amp;text=Carga%20de%20im%C3%A1genes%20de%20Wii%20U" class="twitter-share-button" target="_blank"><img src="img/tweet.png" alt="Tweet"></a></div><div class="box" id="facebook"><a href="http://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fi.nintendo.net%2F&amp;send=false&amp;layout=standard&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=35&amp;appId=294416857326059" target="_blank"><img src="img/btn_like.png" alt="share"></a></div></div>
+  <div class="copyright-right">
+    <img src="img/nintendo.png">
+    <p>© 2013 Nintendo</p>
+  </div>
+  <ul>
+    <li><a class="link-text-left" href="titlelist">Lista de etiquetas</a></li>
+    <li><a class="link-text-left" href="http://www.nintendo.com/wiiu/image-share/es">Acerca de esta herramienta</a></li>
+    <li><a class="link-text-left" href="notice">Avisos legales</a></li>
+    <li><a class="link-text-left" href="contact">Contacto</a></li>
+  </ul>
+  </div>
+  
+  </div>
+  
+  <div class="messages" style="display: none;">
+  	<p id="file_not_selected">No se ha seleccionado
+ningún archivo.</p>
+  </div>
+
+</body></html>
